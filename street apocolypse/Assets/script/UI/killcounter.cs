@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class killcounter : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class killcounter : MonoBehaviour
         if(kill == 4)
         {
             boss.SetActive(true);
+        }
+
+        if(kill == 5)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

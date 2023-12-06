@@ -60,10 +60,6 @@ public class playermovement : MonoBehaviour
             Attack();
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(attackDamage);
-        }
     }
 
     void Attack()

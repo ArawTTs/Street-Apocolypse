@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class DialogueManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public static bool SpawnDia = false;
     public GameObject dia;
     private Queue<string> sentences;
+    public string sceneToLoad;
 
     void Start()
     {
@@ -39,6 +41,7 @@ public class DialogueManager : MonoBehaviour
         if(sentences.Count == 0)
         {
             EndDialogue();
+            SceneManager.LoadScene(sceneToLoad);
             return;
         }
         string sentence = sentences.Dequeue();

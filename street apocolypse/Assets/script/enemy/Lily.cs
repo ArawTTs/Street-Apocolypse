@@ -22,7 +22,10 @@ public class Lily : MonoBehaviour
     public Transform player;
 
     //scorepoint reference
-    //killcounter killcounterscript;
+    //dialogue reference
+    public Dialogue dialogue;
+    public static bool SpawnDia = false;
+    public GameObject dia;
 
     void Start()
     {
@@ -96,6 +99,15 @@ public class Lily : MonoBehaviour
 
         yield return new WaitForSeconds(1.1f);
         Destroy(gameObject);
+        dia.SetActive(true);
+            Time.timeScale = 0f;
+            SpawnDia = true;
+            TriggerDialogue();
+        
+    }
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
     
 }
